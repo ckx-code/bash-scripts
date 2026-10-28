@@ -1,0 +1,33 @@
+#!/usr/bin/bash
+
+echo "============================="
+echo "    SYSTEEMCONTROLE"
+echo "============================"
+
+gebruiker=$(whoami)
+echo "Huidige gebruiker: $gebruiker"
+
+draaitijd=$(uptime -p)
+echo "Systeem draait sinds: $draaitijd"
+
+echo "============================="
+echo "      RAM GEHEUGEN"
+echo "============================="
+free -h 
+
+echo "============================="
+echo "      OPSLAGRUIMTE"
+echo "============================="
+df -h /
+
+echo "============================="
+echo "     ACTIEVE PROCESSEN"
+echo "============================="
+aantal=$(ps -e | wc -l)
+aantal=$((aantal -1))
+
+echo "Aantal actieve processen: $aantal"
+
+echo "============================"
+echo "    CONTROLE VOLTOOID"
+echo "============================"
